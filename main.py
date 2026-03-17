@@ -12,7 +12,7 @@ class TODO():
         new_task = {
             "id": len(todos) +1,
             "task": task,
-            "status": True
+            "status": False
         }
 
         todos.append(new_task)
@@ -21,7 +21,7 @@ class TODO():
             json.dump(todos, f, indent = 4)
 
     def mark_as_done(self):
-        with open("todos.json", "r") as f:
+        with open("todo.json", "r") as f:
             todos = json.load(f)
 
         t_id = int(input("Enter task id:"))
