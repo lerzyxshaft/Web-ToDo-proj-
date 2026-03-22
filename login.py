@@ -74,10 +74,13 @@ class Pass:
             else:
                 print("")
             login_pass = input("Fill this gap with your password")
-            if self.pass_check(login_pass):
-                print("Succssessfull login")
-            else:
+            while self.pass_check(login_pass) is not True:
                 print("Wrong password, try again")
+                login_pass = input("Fill this gap with your password")
+            else:
+                 print("Succssessfull login")
+                 exit()
+                
 
         
 def init_file():
